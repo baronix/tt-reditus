@@ -1,0 +1,20 @@
+<div class="flex flex-col items-center">
+ <input class="border rounded text-center" type="text" id="search" placeholder="Pesquisar">
+</div>
+<div class="grid grid-cols-3 max-w-[1240px] justify-center items-center mx-auto">
+    <div class="relative p-5" *ngFor="let cadaImagem of session">
+        <img class="rounded-md" src={{cadaImagem.nomeDoFicheiro}} width="100%" alt="">
+        <div class="flex justify-center">
+            <h3 class="font-bold pr-8">
+                {{cadaImagem.titulo}}
+            </h3>
+            <p>
+                {{cadaImagem.preco}} €
+            </p>
+        </div>
+        <p class="text-center">
+            {{cadaImagem.descricao}}
+        </p>
+        <button class="top-8 right-10 absolute overflow-clip" (click)="deleteImagem(cadaImagem.idImagem)">❌</button>
+    </div>   
+</div>

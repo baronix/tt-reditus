@@ -1,0 +1,34 @@
+<div class="flex row justify-center mx-auto items-center max-w-[1280px]">
+    <div class="pr-8">
+        <label for="nomeDoFicheiro"><img src={{imgUrl}} alt=""></label>
+    </div>
+    <div>
+        <form [formGroup]="applyForm" (submit)="submeterForm()" class="flex flex-col">
+            <div class="flex justify-between py-1">
+                <label for="titulo">Título</label>
+                <input class="border rounded-md" type="string" id="titulo" formControlName="titulo" required>
+            </div>
+            <div class="flex justify-between py-1">
+                <label class="pr-2" for="nomeDoFicheiro">Nome da Imagem</label>
+                <input class="border rounded-md" type="file" (change)="onselectFile($event)" id="nomeDoFicheiro" formControlName="nomeDoFicheiro" required readonly>
+            </div>
+            <div class="flex justify-between py-1">
+                <label class="pr-2" for="palavrasChave">Palavras Chave</label>
+                <input class="border rounded-md" type="string" id="palavrasChave" formControlName="palavrasChave" required>
+            </div>
+            <div class="flex justify-between py-1">
+                <label class="pr-2" for="preco">Preço</label>
+                <input class="border rounded-md" type="number" id="preco" formControlName="preco" required>
+            </div>
+            <div class="flex justify-between py-1">
+                <label class="pr-2" for="descricao">Descrição</label>
+                <input class="border rounded-md" type="string" id="descricao" formControlName="descricao" required>
+            </div>
+            <div class="flex justify-between py-1">
+                <label class="pr-2" for="dataUpload">Data de Upload</label>
+                <input class="border rounded-md px-5" type="date" id="dataUpload" formControlName="dataUpload" required>
+            </div>
+            <button type="submit" class="bg-black rounded-md text-white px-3 py-1 mt-2">Submeter</button>
+        </form>
+    </div>
+</div>
